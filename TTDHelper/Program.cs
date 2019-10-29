@@ -228,19 +228,16 @@ namespace TTDHelper
             var actionType = string.Empty;
             var sleepMs = 100;
 
-            if (args.Length == 0 || args.Length > 4)
+            if (args.Length != 4)
             {
                 Console.WriteLine("ERROR: Invalid number of arguments passed. Needed 4 arguments.");
                 return;
             }
-            else if (args.Length == 4)
-            {
-                processName = args[0].ToLowerInvariant();
-                moduleName = args[1].ToLowerInvariant();
-                actionType = args[2].ToLowerInvariant();
-                sleepMs = int.Parse(args[3]);
 
-            }
+            processName = args[0].ToLowerInvariant();
+            moduleName = args[1].ToLowerInvariant();
+            actionType = args[2].ToLowerInvariant();
+            sleepMs = int.Parse(args[3]);
 
             var ttdHelper = new TTDHelperClass(processName, moduleName, actionType, sleepMs);
 
