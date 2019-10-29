@@ -231,6 +231,10 @@ namespace TTDHelper
             if (args.Length != 4)
             {
                 Console.WriteLine("ERROR: Invalid number of arguments passed. Needed 4 arguments.");
+                Console.WriteLine("\t Arg1: name of the process (with .exe included).");
+                Console.WriteLine("\t Arg2: name of the managed module (with .dll included).");
+                Console.WriteLine("\t Arg3: action type which accepts values of 'TTD' to attach TTD trace (needs to be in the same folder as TTTRacer.exe and related files) or 'DMP' to create a full user memory dump.");
+                Console.WriteLine("\t Arg4: value in milliseconds to wait after process launch (if not already running at this point) before checking the list of loaded managed modules (DLLs) - a value of 100 can be used if unsure.");
                 return;
             }
 
